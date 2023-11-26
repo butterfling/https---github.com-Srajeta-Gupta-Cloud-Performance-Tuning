@@ -1,0 +1,7 @@
+gensim
+nltk
+chromadb
+streamlit
+PyMuPDF
+numpy
+openai==0.28

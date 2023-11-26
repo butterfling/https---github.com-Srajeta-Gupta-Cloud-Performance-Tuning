@@ -1,0 +1,33 @@
+api-version: 2019-12-01
+location: eastus
+name: talk-pdfs
+properties:
+  containers:
+  - name: streamlitapp
+    properties:
+      image: talkpdfs.azurecr.io/azure-talkpdf:demo
+      ports:
+      - port: 80
+        protocol: TCP
+      - port: 443
+        protocol: TCP
+      resources:
+        requests:
+          cpu: 2.0
+          memoryInGB: 1.5
+  imageRegistryCredentials:
+  - server: talkpdfs.azurecr.io
+    username: talkpdfs
+    password: G6dqRU2MwNN5OR7G3zO0xbqHyU3maUImRua3GxuJ6o+ACRBPEekN
+  restartPolicy: Never
+  ipAddress:
+    ports:
+    - port: 443
+      protocol: TCP
+    - port: 80
+      protocol: TCP
+    type: Public
+    dnsNameLabel: AskTheDoc
+  osType: Linux
+tags: null
+type: Microsoft.ContainerInstance/containerGroups
